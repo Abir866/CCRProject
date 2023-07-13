@@ -301,12 +301,12 @@ async function plotMarkersAndPath(locationsInfo) {
         });
 
         // monitor user focusing the point (for people using tab to navigate)
-        marker.addEventListener("focus", () => {
-            toggleLocationLabel(markerLabel, true);
-        });
-        marker.addEventListener("blur", () => {
-            toggleLocationLabel(markerLabel, false);
-        });
+        // marker.addEventListener("focus", () => {
+        //     toggleLocationLabel(markerLabel, true);
+        // });
+        // marker.addEventListener("blur", () => {
+        //     toggleLocationLabel(markerLabel, false);
+        // });
 
         // animate panel to show additional content for that markers
         marker.addEventListener("click", () => {
