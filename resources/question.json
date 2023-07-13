@@ -1,0 +1,11 @@
+{
+    "1":["option1"," Which of these would you gossip about?","ans1","\"background-image:url('./../../resources/image/poly.jpeg');height:190px;\"","option2","option3"],
+    "2":["option2"," Remember the yellow Birch?","ans2","\"background-image:url('./../../resources/image/birch.jpeg');height:190px;\"","option22","option23"],
+    "3":["option3"," Fruit to keep doctors away?","ans3","\"background-image:url('./../../resources/image/apple.jpeg');height:190px;\"","option32","option33"],
+    "4":["option3"," What else can fly better than other squirrel in name?","ans4","\"background-image:url('./../../resources/image/bird3.jpeg');height:190px;\"","option32","option33"],
+    "5":["option3"," Your nut-cracker friend?","ans5","\"background-image:url('./../../resources/image/squi.jpeg');height:190px;\"","option32","option33"]
+ 
+}
+
+
+

@@ -1,0 +1,132 @@
+/*
+Purpose: 
+Author(s) / Work Done: 
+*/
+
+/*html elements section*/
+:root {
+  --text-color: white;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  width: 100vw;
+  min-height: 10vh;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: -1;
+}
+
+.navlogo {
+  display: flex;
+  height: 10%;
+  width: 10%;
+  margin-left: 20%;
+  border-radius: 50%;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container h4 {
+  display: flex;
+  letter-spacing: 3;
+  font-weight: bold;
+  color: white;
+  margin-left: 3%;
+}
+
+.navlinks {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  width: 50%;
+}
+.link {
+  display: flex;
+  letter-spacing: 3;
+  font-weight: bold;
+}
+
+.link a:hover {
+  color: blueviolet;
+}
+
+.hamburger-toggle {
+  cursor: pointer;
+  display: none;
+  margin-right: 5%;
+}
+
+@media screen and (max-width: 850px) {
+  body {
+    overflow-x: hidden;
+  }
+  .hamburger-toggle {
+    display: block;
+    margin-right: 5%;
+  }
+
+  .navlinks {
+    position: absolute;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    align-items: center;
+    width: 100vw;
+    top: 10vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: translatex(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .active {
+    transform: translateX(0%);
+  }
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  display: flex;
+}
+
+.middle {
+  display: flex;
+}
+
+.bottom {
+  display: flex;
+}

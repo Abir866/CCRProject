@@ -1,0 +1,569 @@
+<!--
+  Purpose: Interactive map by using the static image provided of the preservation
+  Authors: 
+  Zilong Wang  - styling, content, structure
+  Brandon Watson - styling, content, structure
+-->
+  <!--Description: This page is to construct a conservation's map. 
+   When user move their mouse over the markers on map. There will be a brief description about 
+   the places which marker represented. These description boxes are closed to the corresponding markers. Some interactive
+   stuff are on it. When user click the marker. The left side of page will pop out
+   a detailed description box for user to get information  -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <!--link the css file-->
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="styles/interactive map.css" rel="stylesheet" />
+    <link
+      href="../resources/jquery-mobile-theme-203732-0/themes/St_Margaret's_Map.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../resources/jquery-mobile-theme-203732-0/themes/St_Margaret's_Map.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../resources/jquery-mobile-theme-203732-0/themes/jquery.mobile.icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css"
+    />
+    <!-- <script src="./styles/jquery.mobile.structure-1.4.5.min.css"></script> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+            <!--Linking the javascript file-->
+            <script defer src="../../scripts/estore.js"></script>
+            <script defer src="../../scripts/main.js"></script>
+
+    <script src="script/jquery-3.6.1.min.js"></script>
+    <script src="script/jquery-1.11.1.min.js"></script>
+    <script src="script/jquery.mobile-1.4.5.min.js"></script>
+    <script src="script/interactive map.js"></script>
+
+        <!--Linking the css file-->
+        <link rel="stylesheet" href="../../styles/body.css" />
+        <link rel="stylesheet" href="../../styles/nav.css" />
+        <link rel="stylesheet" href="../../styles/header.css" />
+        <link rel="stylesheet" href="../../styles/footer.css" />
+        <link rel="stylesheet" href="../../styles/index.css" />
+        <link rel="stylesheet" href="../../styles/estore.css" />
+
+        
+  </head>
+
+
+  <header>
+    <!--this is the navigation bar on the top-->
+    <div class="header-container">
+      <div class="org-name">
+        <!--the logo-->
+        <a class="org-logo" href="../../index.html">
+        <p><a href="../../index.html">French Village Forest <b>Conservation</b></a></p>
+      </div>
+      <div class="menu-btn">
+        <div class="menu-btn_burger"></div>
+        <!--this is the part for options of navigation bar on the top-->
+        <div id="nav-bar" class="nav-bar">
+          <nav>
+            <ul>
+              <li><a href="../../pages/about/about.html">About</a></li>
+              <li><a href="../../pages/ecosystem/ecosystem.html">Ecosystem</a></li>
+              <li><a href="../../pages/map/map.html">Map</a></li>
+              <li><a href="../../pages/burial/burial.html">Burial</a></li>
+              <li><a href="../../pages/quiz/game.php">Quiz</a></li>
+              <li><a href="../../pages/e-commerce/estore.html">Marketplace</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <body onload="setup()">
+    <div data-role="page">
+      <div class="ui-content" id="ui-content">
+        <div class="main-content">
+        <div class="ui-grid-a ui-responsive">
+          <div class="ui-block-a ui-responsive">
+            <!--this is main div on this page, the map of conservation is its
+            background-->
+            <div id="image-container">
+              <img
+                src="../resources/image/map.jpg"
+                id="map"
+                onclick="detect_Click(event)"
+              />
+            
+            <!--this is the detailed description box on the left side of map,
+             hidden in default-->
+              <div id="detail_block">
+
+               <!--this is the top picture on the detailed description box-->
+               <div class="boxes_picture">
+                <img src="" id="picture_part">
+               </div>
+
+
+                <!--basic information like places' name and rating
+                  in detailed description box-->
+               <div id="information_part">
+                      <div id="name_part">
+                        <p id="location_name"></p>
+                      </div>
+                      <div id="star_rate_part">
+                        <span>5.0</span>
+                        <span class="icon_check">★</span>
+                        <span class="icon_check">★</span>
+                        <span class="icon_check">★</span>
+                        <span class="icon_check">★</span>
+                        <span class="icon_check">★</span>
+                        <span id="review" onclick="">reviews</span>
+                      </div>
+               </div>
+             
+                <!--This part contains the information of the selected place 
+                  in detailed description box-->
+               <div id="introduction_part">
+                     <p id="introduction"></p>
+               </div>
+
+                <!--This part in detailed description box contain the buttons.
+                  Once user can click, in principle, user can click the learn more button 
+                  to explore the particular page for that location
+                  -->
+               <div class="buttons_part">
+                <input type="button" value="Burial" onclick="location.href='/pages/burial/burial.html'" class="btn">
+                <input type="button" value="Learn more" class="btn">
+               </div>
+               <!--This part will contains the images of the specific location,
+               Unfortunately, We move out our foucus on it and time is not enough. 
+               So the development of this part had been given up-->
+               <div id="photo_collection">
+                
+               <div id="collection_title">
+                Photo collection
+               </div>
+
+               </div>
+
+
+
+              </div>
+              <button type="button" id="mode_switch" onclick="change_mode()">Google Mode</button><!--switch to Google map version-->
+
+             <!--The first marker, marker is clickable-->
+             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill mywid bounce" viewBox="0 0 16 16" id="marker1" onclick="empty_tips()" onmouseover = "moveover_marker1()" onmouseleave="moveout_marker1()">
+              <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+             </svg>
+            <!--The brief description box, it should be closed to the marker1, hidden in default-->
+             <div class="short_description_blocks infowin" id="description1" onmouseenter="moveover_description1()" onmouseleave="moveout_description1()">
+               <div class="slideshow-container">
+                <!--The picture on the top of brief description box-->
+                 <div class="slideshow-image" id="slideshow_image1A" >
+                  <img src="../resources/image/trailhead.jpg" class="slideshow_image">
+                 </div>
+               </div>
+                <!--simple introduction inside brief description box-->
+                <div style="width: 250px; height: 75px; border: 1px solid black; border-radius: 0 0 5px 5px; border: none;">
+                 <center><b>Trailhead</b></center>
+                 <b style="color:red;">Tip:</b> This is where you start
+                </div>
+             </div>
+
+
+
+
+
+              <!--The second marker, marker is clickable-->
+             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill mywid bounce" viewBox="0 0 16 16" id="marker2" onclick="marker2_click()" onmouseover = "moveover_marker2()" onmouseleave="moveout_marker2()">
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+             </svg>
+               <!--The brief description box, it is closed to the marker2, hidden in default-->
+             <div class="description_blocks infowin" id="description2" onmouseenter="moveover_description2()" onmouseleave="moveout_description2()">
+                <!--The slideshow on the top of brief description box-->
+                <div class="slideshow-container">
+                  <div class="slideshow-image" id="slideshow_image2A" >
+                   <img src="../resources/image/hazelnut tree1.jpg" class="slideshow_image">
+                  </div>
+                   
+                  <div class="slideshow-image second_image" id="slideshow_image2B" >
+                    <img src="../resources/image/hazelnut tree2.jpg" class="slideshow_image">
+                   </div>
+                   
+                   <b class="prev" onclick="slideCount2(-1)">&#10094;</b>
+                   <b class="next" onclick="slideCount2(1)">&#10095;</b>
+                </div>
+                 <!--simple introduction inside brief description box-->
+                <div class="information_container">
+                <div class="brief_description">
+                  <b>Hazelnut tree</b>
+                  <br>
+                  <span style="font-size: 10px;">5.0</span>
+                  <span class="small_icon_check">★</span>
+                  <span class="small_icon_check">★</span>
+                  <span class="small_icon_check">★</span>
+                  <span class="small_icon_check">★</span>
+                  <span class="small_icon_check">★</span>
+                </div>
+                <div class="button_group"><a href="">Learn more</a></div>
+                </div>
+              </div>
+
+
+
+
+
+              <!--The third marker, marker is clickable-->
+             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill mywid bounce" viewBox="0 0 16 16" id="marker3" onclick="marker3_click()" onmouseenter = "moveover_marker3()" onmouseleave="moveout_marker3()">
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+             </svg>
+              <!--The brief description box, it is closed to the marker3, hidden in default-->
+             <div class="description_blocks infowin" id="description3" class="infowin" onmouseenter="moveover_description3()" onmouseleave="moveout_description3()">
+                <!--The slideshow on the top of brief description box-->
+              <div class="slideshow-container">
+                    <div class="slideshow-image" id="slideshow_image3A" >
+                     <img src="../resources/image/apple tree1.jpg" class="slideshow_image">
+                    </div>
+                    <div class="slideshow-image second_image" id="slideshow_image3B" >
+                      <img src="../resources/image/apple tree2.jpg" class="slideshow_image ">
+                    </div>
+                     <b class="prev" onclick="slideCount3(-1)">&#10094;</b>
+                     <b class="next" onclick="slideCount3(1)">&#10095;</b>
+                </div>
+                <!--simple introduction inside brief description box-->
+                <div class="information_container">
+                <div class="brief_description">
+                  <b>Big apple tree</b>
+                  <br>
+                  <span style="font-size: 10px;">5.0</span>
+                  <span class="small_icon_check">★</span>
+                  <span class="small_icon_check">★</span>
+                  <span class="small_icon_check">★</span>
+                  <span class="small_icon_check">★</span>
+                  <span class="small_icon_check">★</span>
+                </div>
+                <div class="button_group"><a href="">Learn more</a></div>
+                </div>
+              </div>
+
+
+
+
+
+               <!--The 4th marker, marker is clickable-->
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill mywid bounce" viewBox="0 0 16 16" id="marker4" onclick="marker4_click()" onmouseover = "moveover_marker4()" onmouseleave="moveout_marker4()">
+               <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+              </svg>
+              <!--The brief description box, it is closed to the marker4, hidden in default-->
+             <div class="description_blocks infowin" id="description4" onmouseenter="moveover_description4()" onmouseleave="moveout_description4()">
+               <!--The slideshow on the top of brief description box-->
+              <div class="slideshow-container">
+                <div class="slideshow-image" id="slideshow_image4A" >
+                 <img src="../resources/image/pear tree1.jpg" class="slideshow_image">
+                </div>
+                 
+                <div class="slideshow-image second_image" id="slideshow_image4B" >
+                  <img src="../resources/image/pear tree2.jpg" class="slideshow_image ">
+                 </div>
+                 
+                 <b class="prev" onclick="slideCount4(-1)">&#10094;</b>
+                 <b class="next" onclick="slideCount4(1)">&#10095;</b>
+              </div>
+              <!--simple introduction inside brief description box-->
+              <div class="information_container">
+              <div class="brief_description">
+                  <b>Pear tree</b>
+                  <br>
+                  <span style="font-size: 10px;">5.0</span>
+                  <span class="small_icon_check">★</span>
+                  <span class="small_icon_check">★</span>
+                  <span class="small_icon_check">★</span>
+                  <span class="small_icon_check">★</span>
+                  <span class="small_icon_check">★</span>
+              </div>
+              <div class="button_group"><a href="">Learn more</a></div>
+              </div>
+              </div>
+            
+
+
+
+
+              <!--The 5th marker, marker is clickable-->
+             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill mywid bounce" viewBox="0 0 16 16" id="marker5" onclick="marker5_click()" onmouseover = "moveover_marker5()" onmouseleave="moveout_marker5()">
+             <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+             </svg>
+              <!--The brief description box, it is closed to the marker5, hidden in default-->
+              <div class="description_blocks infowin" id="description5" onmouseenter="moveover_description5()" onmouseleave="moveout_description5()">
+                <!--The slideshow on the top of brief description box-->
+                <div class="slideshow-container">
+              <div class="slideshow-image" id="slideshow_image5A" >
+               <img src="../resources/image/Cherry-Honeysuckle Arch1.jpg" class="slideshow_image">
+              </div>
+               
+              <div class="slideshow-image second_image" id="slideshow_image5B" >
+                <img src="../resources/image/Cherry-Honeysuckle Arch2.jpg" class="slideshow_image ">
+               </div>
+               
+               <b class="prev" onclick="slideCount5(-1)">&#10094;</b>
+               <b class="next" onclick="slideCount5(1)">&#10095;</b>
+             </div>
+              <!--simple introduction inside brief description box-->
+             <div class="information_container">
+             <div class="brief_description">
+                <b>Cherry-Honeysuckle Arch</b>
+                <br>
+                <span style="font-size: 10px;">5.0</span>
+                <span class="small_icon_check">★</span>
+                <span class="small_icon_check">★</span>
+                <span class="small_icon_check">★</span>
+                <span class="small_icon_check">★</span>
+                <span class="small_icon_check">★</span>
+             </div>
+             <div class="button_group"><a href="">Learn more</a></div>
+             </div>
+             </div>
+
+
+
+              <!--The 6th marker, marker is clickable-->
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill mywid bounce" viewBox="0 0 16 16" id="marker6" onclick="empty_tips()" onmouseover = "moveover_marker6()" onmouseleave="moveout_marker6()">
+              <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+              </svg>
+             <!--The brief description box, it is closed to the marker6, hidden in default-->
+              <div class="short_description_blocks infowin" id="description6" onmouseenter="moveover_description6()" onmouseleave="moveout_description6()">
+              <!--The slideshow on the top of brief description box-->
+              <div class="slideshow-container">
+              <div class="slideshow-image" id="slideshow_image6A" >
+             <img src="../resources/image/sharptrail.jpg" class="slideshow_image">
+             </div>
+             </div>
+             <!--simple introduction inside brief description box-->
+             <div style="width: 250px; height: 75px; border: 1px solid black; border-radius: 0 0 5px 5px; border: none;">
+              <center><b>Begining of Spruce Grove </b></center>
+              <b style="color:red;">Tip:</b> Trail take sharp turn here. 
+              </div>
+              </div>
+
+
+
+       
+              <!--The 7th marker, marker is clickable-->
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill mywid bounce" viewBox="0 0 16 16" id="marker7" onclick="marker7_click()" onmouseover = "moveover_marker7()" onmouseleave="moveout_marker7()">
+              <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+              </svg>
+              <!--The brief description box, it is closed to the marker7, hidden in default-->
+              <div class="description_blocks infowin" id="description7" onmouseenter="moveover_description7()" onmouseleave="moveout_description7()">
+              <!--The slideshow on the top of brief description box-->
+              <div class="slideshow-container">
+             <div class="slideshow-image" id="slideshow_image7A" >
+             <img src="../resources/image/foundation1.jpg" class="slideshow_image">
+             </div>
+             
+            <div class="slideshow-image second_image" id="slideshow_image7B" >
+              <img src="../resources/image/foundation2.jpg" class="slideshow_image ">
+             </div>
+             
+             <b class="prev" onclick="slideCount7(-1)">&#10094;</b>
+             <b class="next" onclick="slideCount7(1)">&#10095;</b>
+          </div>
+          <!--simple introduction inside brief description box-->
+          <div class="information_container">
+          <div class="brief_description">
+              <b>Foundation</b>
+              <br>
+              <span style="font-size: 10px;">5.0</span>
+              <span class="small_icon_check">★</span>
+              <span class="small_icon_check">★</span>
+              <span class="small_icon_check">★</span>
+              <span class="small_icon_check">★</span>
+              <span class="small_icon_check">★</span>
+          </div>
+          <div class="button_group"><a href="">Learn more</a></div>
+          </div>
+      </div>
+
+
+
+
+       <!--The 8th marker, marker is clickable-->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill mywid bounce" viewBox="0 0 16 16" id="marker8" onclick=" empty_tips()" onmouseover = "moveover_marker8()" onmouseleave="moveout_marker8()">
+         <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+        </svg>
+       <!--The brief description box, it is closed to the marker8, hidden in default-->
+        <div class="short_description_blocks infowin" id="description8" onmouseenter="moveover_description8()" onmouseleave="moveout_description8()">
+          <!--The picture on the top of brief description box-->
+          <div class="slideshow-container">
+            <div class="slideshow-image" id="slideshow_image8A" >
+             <img src="../resources/image/sweetcherry.jpg" class="slideshow_image">
+            </div>
+          </div>
+          <!--simple introduction inside brief description box-->
+          <div style="width: 250px; height: 75px; border: 1px solid black; border-radius: 0 0 5px 5px; border: none;">
+              
+              <center><b>End of Spruce Grove </b></center>
+              <b style="color:red;">Tip:</b>Sweet cherry is also here! 
+          </div>
+        </div>
+
+
+
+        <!--The 9th marker, marker is clickable-->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill mywid bounce" viewBox="0 0 16 16" id="marker9" onclick="marker9_click()" onmouseover = "moveover_marker9()" onmouseleave="moveout_marker9()">
+          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+         </svg>
+         <!--The brief description box, it is closed to the marker9, hidden in default-->      
+         <div class="description_blocks infowin" id="description9" onmouseenter="moveover_description9()" onmouseleave="moveout_description9()">
+         <!--The slideshow on the top of brief description box-->
+          <div class="slideshow-container">
+            <div class="slideshow-image" id="slideshow_image9A" >
+             <img src="../resources/image/biggrove1.jpg" class="slideshow_image">
+            </div>
+             
+            <div class="slideshow-image second_image" id="slideshow_image9B" >
+              <img src="../resources/image/biggrove2.jpg" class="slideshow_image ">
+             </div>
+             
+             <b class="prev" onclick="slideCount9(-1)">&#10094;</b>
+             <b class="next" onclick="slideCount9(1)">&#10095;</b>
+          </div>
+          <!--simple introduction inside brief description box-->
+          <div class="information_container">
+          <div class="brief_description">
+              <b>Big Grove</b>
+              <br>
+              <span style="font-size: 10px;">5.0</span>
+              <span class="small_icon_check">★</span>
+              <span class="small_icon_check">★</span>
+              <span class="small_icon_check">★</span>
+              <span class="small_icon_check">★</span>
+              <span class="small_icon_check">★</span>
+          </div>
+          <div class="button_group"><a href="">Learn more</a></div>
+          </div>
+      </div>
+
+
+        <!--The 10th marker(Its id is marker11, it is correspond to its number on map ), marker is clickable-->
+         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill mywid bounce" viewBox="0 0 16 16" id="marker11" onclick="marker11_click()" onmouseover = "moveover_marker11()" onmouseleave="moveout_marker11()">
+          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+         </svg>
+          <!--The brief description box, it is closed to the marker11, hidden in default-->     
+         <div class="description_blocks infowin" id="description11" onmouseenter="moveover_description11()" onmouseleave="moveout_description11()">
+          <!--The slideshow on the top of brief description box-->
+          <div class="slideshow-container">
+            <div class="slideshow-image" id="slideshow_image11A" >
+             <img src="../resources/image/apple tree1.jpg" class="slideshow_image">
+            </div>
+             
+            <div class="slideshow-image second_image" id="slideshow_image11B" >
+              <img src="../resources/image/apple tree2.jpg" class="slideshow_image ">
+             </div>
+             
+             <b class="prev" onclick="slideCount11(-1)">&#10094;</b>
+             <b class="next" onclick="slideCount11(1)">&#10095;</b>
+          </div>
+          <!--simple introduction inside brief description box-->
+          <div class="information_container">
+          <div class="brief_description">
+              <b>A very big apple tree</b>
+              <br>
+              <span style="font-size: 10px;">5.0</span>
+              <span class="small_icon_check">★</span>
+              <span class="small_icon_check">★</span>
+              <span class="small_icon_check">★</span>
+              <span class="small_icon_check">★</span>
+              <span class="small_icon_check">★</span>
+          </div>
+          <div class="button_group"><a href="">Learn more</a></div>
+          </div>
+      </div>
+
+
+
+
+
+    </div>
+        
+
+
+
+
+
+
+
+        </div>
+      </div>
+       <!--the bottom of page contain the contact information -->
+        <footer class="section-p1">
+          <div class="col">
+            <h4>Contact Us</h4>
+            <p>
+              <strong>Address:</strong> 71 St Pauls Ln, French Village, NS B3Z
+              4E3
+            </p>
+            <p><strong>Phone:</strong> 111 222 333/ (+1) 444 555 666</p>
+            <p><strong>Hours:</strong> 10:00 - 16:00; Mon - Sat</p>
+          </div>
+
+          <div class="col">
+            <h4>Useful Links</h4>
+            <a href="../quiz/game.php">Quiz</a>
+            <a href="#">Sign-in</a>
+            <a href="../e-commerce/estore.html">MarketPlace</a>
+            <a href="../map/map.html">Map</a>
+          </div>
+
+          <div class="col">
+            <div class="follow">
+              <h4>Follow us</h4>
+              <div class="icon">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-pinterest-p"></i>
+                <i class="fab fa-linkedin"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="copyright">
+            <p>Ⓒ SMU Software Engineering Group F</p>
+          </div>
+        </footer>
+        </div><!--End of Main content-->
+      </div> <!--End of ui-content class-->
+    </div> <!--End of Data-role page-->
+  </body>
+</html>
+
+

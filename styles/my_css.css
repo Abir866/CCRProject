@@ -1,0 +1,130 @@
+/* 
+Purpose:This file serves as the layout and style provider for  the quiz game 
+elements that has no in-line styling
+Essentially, it regulates the design by dealing with each individual questions,
+options( including their images),also the more info modal, progress bar,
+question number, markings of corrections(wrong and right answers) at the end of
+one iteration of the quiz and finally the entire game pages's body size.
+Colors, sizes, hover effects, text decorations, border design and finally arraging 
+of these game elemnts into one page  are covered here
+
+Author / Work Done  :Toufiq Abir Farhan Tufan  authored the css in the entire file for the quiz game
+
+*/
+/* Setting the style of More info image to be aligned at the center*/
+#im{
+  width:200px;
+  height:100px;
+  display:block;
+  margin:auto;
+  border: 2px outset black ;
+}
+
+
+
+/*Changes the opacity when cursor hovered over the option 1, 2 of each question*/
+div.question input:hover{
+  color:rgb(26, 101, 26, 0.9);
+  opacity:0.5
+  
+}
+/*Changes the opacity when cursor hovered over the 3rd option  of each question*/
+div.question div>input:hover{
+  color:rgb(52, 91, 41, 0.9);
+  opacity:0.5
+}
+/*Controls the styling of the 1st and 2nd option  buttons' contents including the setting to
+transperant of the textual value attributes of these buttons when displayed in the web page  */
+div.question input{
+  margin:10px;
+  display:inline-block;
+  width: 325px;
+  background-size:325px 190px;
+  color:rgb(244, 249, 253, 0.9);
+  font-size:2em;
+  -webkit-text-fill-color:transparent;
+}
+/*Controls the styling of the 1st and 2nd option  buttons' contents including the setting to
+transperant of the textual value attributes of these buttons when displayed in the web page  */
+div.question div>input{
+  display:block;
+  width: 450px;
+  background-size:450px 190px;
+  margin:auto;
+  color:rgb(18, 33, 47, 0.9);
+  font-size:4em;
+  -webkit-text-fill-color:transparent;
+}
+
+.bodyQuiz {
+  /**max-width: 750px;*/
+  margin:auto;
+}
+/*Causes all the divs each containing a question with it's options to be hidden*/
+.question {
+  display: none;
+  
+}
+/*Causes each of the headers containing the question to be displayed
+ especially with an inset border*/
+div.question .qhead{
+  font-weight: lighter;
+  height:100px;
+  text-align: center;
+  border-style: inset;
+}
+
+/*Style for the image in the background of the starting screen of the game */
+.mystyle{
+  width:450px;
+  height:300px;
+  margin:auto;
+  background-image:url('./../resources/image/poly.jpeg');
+  background-size:450px 300px;
+
+}
+/*Causes the play button to appear horizontally centered at the starting screen of the game*/
+.Play{
+  display:block;
+  margin:auto;
+}
+/**
+ Controls the height of the modal that gives game instructions
+**/
+.mod{
+  height: 250px;
+}
+/*Setting border-radius and display as inline block caused the progress bar as
+a group of circular dots in one line on the top of each question*/
+.dot{
+  height:25px;
+  width:25px;
+  
+  border-radius: 50%;
+  display:inline-block;
+}
+.qnum{
+  text-decoration: wavy;
+}
+/*
+margin to align wrong markings in the center of the screen
+*/
+.wrong{
+  border:2px outset black;
+  border-radius: 10%;
+  background-color: rgb(177, 65, 65);
+  width:500px;
+  margin:auto;
+}
+/*
+margin to align right markings in the center of the screen
+*/
+.right{
+  border:2px outset black;
+  border-radius: 10%;
+  background-color: rgb(92, 155, 111);
+  width:500px;
+  margin:auto;
+}
+
+

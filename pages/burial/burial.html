@@ -1,0 +1,205 @@
+<!--
+  Purpose: burial booking
+  Authors: 
+  Zilong Wang  - styling, content, structure
+  Brandon Watson - styling, content, structure
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <link
+      href="../resources/jquery-mobile-theme-203732-0/themes/St_Margaret's_Map.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../resources/jquery-mobile-theme-203732-0/themes/St_Margaret's_Map.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../resources/jquery-mobile-theme-203732-0/themes/jquery.mobile.icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css"
+    />
+    <link rel="stylesheet" href="./styles/jquery.mobile-1.4.5.min.css" />
+    <link
+      rel="stylesheet"
+      href="./styles/jquery.mobile.structure-1.4.5.min.css"
+    />
+    
+    <script src=" ./script/jquery-1.11.1.min.js"></script>
+    
+
+    <!--Linking the css file-->
+    <link rel="stylesheet" href="../../styles/body.css" />
+    <link rel="stylesheet" href="../../styles/nav.css" />
+    <link rel="stylesheet" href="../../styles/header.css" />
+    <link rel="stylesheet" href="../../styles/footer.css" />
+    <link rel="stylesheet" href="../../styles/index.css" />
+    <link rel="stylesheet" href="../../styles/estore.css" />
+
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="./styles/burial_information.css" />
+
+    <!--Linking the javascript file-->
+   
+   
+    <script src="./script/burial information.js"></script>
+  </head>
+
+  <header id="header">
+    <div class="header-container">
+      <div class="org-name">
+        <a class="org-logo" href="../../index.html">
+        <p><a href="../../index.html">French Village Forest <b>Conservation</b></a></p>
+      </div>
+      <div class="menu-btn">
+        <div class="menu-btn_burger"></div>
+        <div id="nav-bar" class="nav-bar">
+          <nav>
+            <ul>
+              <li><a href="../../pages/about/about.html">About</a></li>
+              <li><a href="../../pages/ecosystem/ecosystem.html">Ecosystem</a></li>
+              <li><a href="../../pages/map/map.html">Map</a></li>
+              <li><a href="../../pages/burial/burial.html">Burial</a></li>
+              <li><a href="../../pages/quiz/game.php">Quiz</a></li>
+              <li><a href="../../pages/e-commerce/estore.html">Marketplace</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <body onload="setup()">
+    <div data-role="page">
+      <div class="ui-content" id="ui-content">
+        
+            <div id="information_container" class="change_part">
+              <div id="background_image">
+                <img src="../resources/image/background_image.jpg" style="width:100%; height:100%; opacity: 80%;">
+                <b id="title">THE BURIAL YOU SHOULD KNOW</b>
+              </div>
+
+              <div id="information">
+                 <center><p id="information_title">Want a natural burial?</p></center>
+                 <p id="information_content"><b>Our conservation provied the green-burial service, </b>If you actually have the demand for it. Please call us at 352-317-7307 to discuss your personal situation. 
+                  In this page, we will simply introduce our service and the process of online booking. We trust it will save a lot of time for you. 
+                  The main content of the process is a form you need to fill. 
+                  Before you enter the form, there is an agreement you should sign. We trust this agreement can actually protect your right, so please read carefully. 
+                  <br>
+                  <br>
+
+                  If you would like to prepay for your burial, some funeral homes can include our cost in a plan with their services. 
+                  There are other options as well, such as CDs payable upon death or dedicated savings accounts.
+                  Prepaying a funeral home is a choice some people make, but the most important thing to do is to make and share a plan.
+                  To understand the decisions involved in arranging a natural burial please review our Burial Planning Guide, look at our FAQ page, and/or give us a call. 
+                 </p>
+
+                 <center><video width="400px" height="300px" controls>
+                 <source src="../resources/video/green_burial.mp4" type="video/mp4"></center>
+              </div>
+
+              <div id="button_div">
+                 <button type="button" id="button" onclick="clickable()" onmouseover="color_change()" onmouseout="color_back()">Start Burial Booking</button>
+              </div>
+            </div>
+          
+
+            <div id="agreement">
+              <div id="agreement_information">
+                Licensing Agreement
+                This License Agreement (this “Agreement”) is made effective as of [Insert Date Here] between [Insert Name of Owner of Property to be Licensed], of [Insert Full Address Here], and [Insert Name of the Party Who Will Use the Licensed Property], of [Insert Full Address Here].
+                <br>
+                In the Agreement, the party who is granting the right to use the licensed property will be referred to as “[Insert Name of Owner of Property to be Licensed],” and the party who is receiving the right to use the licensed property will be referred to as “[Insert Name of the Party Who Will Use the Licensed Property].”
+                <br>
+                The parties agree as follows:
+                <br>
+                1. GRANT OF LICENSE.
+                [Insert Name of Owner of Property to be Licensed] owns [Describe the Property to be Licensed] (the “Authored Work”). In accordance with this Agreement, [Insert Name of Owner of Property to be Licensed] grants [Insert Name of the Party Who Will Use the Licensed Property] an exclusive license to use the Authored Work. [Insert Name of Owner of Property to be Licensed] retains title and ownership of the Authored Work and derivative works will be assigned to Licensor by Licensee.
+                <br>
+                2. PAYMENT OF ROYALTY.
+                [Insert Name of the Party Who Will Use the Licensed Property] will pay to [Insert Name of Owner of Property to be Licensed] a royalty which shall be calculated as follows: [Describe How the Payment to the Licensor in Exchange for the Use of the Licensed Property Will be Determined]
+                <br>
+                3. MODIFICATIONS.
+                [Insert Name of the Party Who Will Use the Licensed Property] may not modify or change the Authored Work in any manner.
+
+              </div>
+
+              <div id="button_group">
+                <button type="button" id="back_button" onclick="go_back()">Back</button>
+                <button type="button" id="agree_button" onclick="next()">I agree</button>
+              </div>
+            </div>
+
+            
+        
+
+
+
+
+
+
+          <footer id="footer">
+            <div class="col">
+              <h4>Contact Us</h4>
+              <p>
+                <strong>Address:</strong> 71 St Pauls Ln, French Village, NS B3Z
+                4E3
+              </p>
+              <p><strong>Phone:</strong> 111 222 333/ (+1) 444 555 666</p>
+              <p><strong>Hours:</strong> 10:00 - 16:00; Mon - Sat</p>
+            </div>
+
+            <div class="col">
+              <h4>Useful Links</h4>
+              <a href="../../pages/quiz/game.php">Quiz</a>
+              <a href="#">Sign-in</a>
+              <a href="../../pages/e-commerce/estore.html">MarketPlace</a>
+              <a href="../../pages/map/map.html">Map</a>
+            </div>
+
+            <div class="col">
+              <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                  <i class="fab fa-facebook-f"></i>
+                  <i class="fab fa-twitter"></i>
+                  <i class="fab fa-instagram"></i>
+                  <i class="fab fa-pinterest-p"></i>
+                  <i class="fab fa-linkedin"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="copyright">
+              <p>Ⓒ SMU Software Engineering Group F</p>
+            </div>
+          </footer>
+        
+      </div>
+    </div>
+  </body>
+</html>

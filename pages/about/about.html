@@ -1,0 +1,195 @@
+<!--
+  Purpose: About page of the website, contains information regarding the mission and history of the conservation
+  Authors:  
+  Devon Leigh - Styling, structure, content
+  Rahabar Mahmud - Footer
+  Jeeva Murugesan - Accessibility Mode
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+
+    <!--Linking the css files for styling-->
+    <link rel="stylesheet" href="../../styles/body.css" />
+    <link rel="stylesheet" href="../../styles/nav.css" />
+    <link rel="stylesheet" href="../../styles/header.css" />
+    <link rel="stylesheet" href="../../styles/footer.css" />
+    <link rel="stylesheet" href="../../styles/index.css" />
+    <link rel="stylesheet" href="../../styles/estore.css" />
+
+    <!--Linking a custom font-->
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!--Linking the javascript files for functionality-->
+    <script defer src="../../scripts/estore.js"></script>
+
+    <!--seniorFunction() is executed after the double click button action
+        The button changes to "Default View" by using the button's ID as reference
+        The background color changes to 'dimgrey' by using the class name of the main container as reference-->
+    <script>
+          function seniorFunction(){
+
+var x = document.getElementById("senior").innerHTML;
+
+
+if (x== "Accessibility Mode"){
+  console.log(document.getElementsByClassName('main-container').length);
+document.getElementById("senior").innerHTML = "Default View";
+document.getElementsByClassName('main-container')[0].style.backgroundColor='dimgrey';
+let len = document.getElementsByClassName('main-container').length;
+
+/*The font color and size changes with every iteration of the for loop as every header and paragraph has 'main-container' as its ClassName */
+for(i=0; i<len; i++){
+  document.getElementsByClassName('main-container')[i].style.color='rgb(225,225,80)';
+  document.getElementsByClassName('main-container')[i].style.fontSize = '30px';
+}
+}
+else {
+window.location.reload();
+}
+}   
+        </script>
+    <script defer src="../../scripts/main.js"></script>
+
+    <title>Saint Margaret's Bay Store</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="org-name">
+          <!--Links back to homepage if clicked-->
+          <a class="org-logo" href="../../index.html"></a>
+          <!--Links back to homepage if clicked-->
+          <p>
+            <a href="../../index.html">French Village Forest <b>Conservation</b></a>
+          </p>
+        </div>
+        <div class="menu-btn">
+          <div class="menu-btn_burger"></div>
+          <div id="nav-bar" class="nav-bar">
+            <nav>
+              <ul>
+                <!--Links to alternative pages in the navbar-->
+                <!--Double click on the 'Accessibility Mode' button calls seniorFunction()-->
+                <li><button id= "senior" ondblclick= "seniorFunction()" style= "padding: 10px; color: white; font-weight: bolder;
+                  font-size: small; border: none; background-color:MediumSeaGreen;">Accessibility Mode</button></li>
+                <li><a href="../../pages/about/about.html">About</a></li>
+                <li><a href="../../pages/ecosystem/ecosystem.html">Ecosystem</a></li>
+                <li><a href="../../pages/map/map.html">Map</a></li>
+                <li><a href="../../pages/burial/burial.html">Burial</a></li>
+                <li><a href="../../pages/quiz/game.php">Quiz</a></li>
+                <li><a href="../../pages/e-commerce/estore.html">Marketplace</a></li>
+
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--Main content div for all page content for responsive design-->
+    <div class="main-content burial main-container" >
+      <div class="aboutpage-container".style.color= "rgb(225,225,80)">
+        <div class="history-section">
+          <div class="history-title">
+            <h1 class="main-container">HISTORY</h1>
+          </div>
+          <div class="history-text">
+            <p class="main-container">
+              "In 20xx, the French Village Forest Preservation was discovered by
+              X Y who noticed some flora and flauna on the premises that have a
+              deserve to be preserved for future generations. After much
+              community driven work we are left with a majestic piece of history
+              that we can preserve for our community and the life that thrives
+              within the ecosystem here."
+            </p>
+          </div>
+        </div>
+        <div id="mission-section" class="mission-section">
+          <div id="mission-title" class="mission-title">
+            <h1 class="main-container">OUR MISSION</h1>
+          </div>
+          <div class="mission-text">
+            <p class="main-container">
+              "To preserve a dynamic and unique system of natural and cultural
+              resources, and to develop innovative educational, recreational and
+              cultural opportunities of regional value, while exercising
+              environmental and fiscal responsibility."
+            </p>
+          </div>
+        </div>
+        <div id="rules-section" class="rules-section">
+          <div id="rules-title" class="rules-title">
+            <h1 class="main-container">ORDINANCES, RULES & REGULATIONS</h1>
+          </div>
+          <div id="rules-text" class="rules-text">
+            <p class="main-container">
+              The general purpose of these Regulations is to set forth rules and
+              regulations governing the use of District Property that are
+              intended to protect and preserve District Property and the flora,
+              fauna, and scenic beauties therein, and to provide opportunities
+              for the education, pleasure, and recreation of the public.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!--The footer-->
+      <footer class="section-p1">
+        <div class="col">
+          <h4>Contact Us</h4>
+          <p>
+            <strong>Address:</strong> 71 St Pauls Ln, French Village, NS B3Z 4E3
+          </p>
+          <p><strong>Phone:</strong> 111 222 333/ (+1) 444 555 666</p>
+          <p><strong>Hours:</strong> 10:00 - 16:00; Mon - Sat</p>
+        </div>
+
+        <div class="col">
+          <h4>Useful Links</h4>
+          <a href="../quiz/game.php">Quiz</a>
+          <a href="#">Sign-in</a>
+          <a href="../e-commerce/estore.html">MarketPlace</a>
+          <a href="../map/map.html">Map</a>
+        </div>
+
+        <div class="col">
+          <div class="follow">
+            <h4>Follow us</h4>
+            <div class="icon">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-pinterest-p"></i>
+              <i class="fab fa-linkedin"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>Ⓒ SMU Software Engineering Group F</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

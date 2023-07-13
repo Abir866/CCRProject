@@ -1,0 +1,31 @@
+/*  Purpose: burial styling
+    Authors:
+    Zilong Wang  - styling
+    Brandon Watson - styling*/
+
+.main-content-burial{
+    background-image: url("../../resources/image/formbackground.jpg"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: max-content; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+   
+}
+
+#form-container{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;  
+}
+
+#form{
+    margin: 10%;
+    width: 33%;
+}
+
+#book-title{
+    margin: 10%;
+}
+

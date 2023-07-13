@@ -1,0 +1,38 @@
+/* 
+ The purpose of this file is to define the styling for the index page within the admin folder
+
+ Author: Agowun Muhammad Altaf (A00448118), wrote the whole file
+*/
+
+// import the Quicksand font style from google fonts https://fonts.google.com/specimen/Quicksand
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap");
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Quicksand", sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+#optionSect {
+    padding: 1em 10vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .options {
+        background-color: #01a66f;
+        color: black;
+        padding: 0.5em;
+        margin: 0.3em;
+        border-radius: 1rem;
+        text-decoration: none;
+        text-align: center;
+        font-weight: bold;
+        font-size: large;
+    }
+}

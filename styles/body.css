@@ -1,0 +1,606 @@
+/*
+Purpose: Provides styling for the body div as well as much of the content in index.html
+Author(s) / Work Done: 
+Devon Leigh - HTML element styling
+Rahabar Mahmud - HTML element styling
+*/
+
+/*import custom fonts from google api and rsms*/
+@import url("https://rsms.me/inter/inter.css");
+@import url("https://fonts.googleapis.com/css?family=Spartan");
+
+/*html elements section*/
+html {
+  font-family: "spartan", sans-serif;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "spartan";
+}
+
+html,
+body {
+  display: flex;
+  background-color: white;
+  color: black;
+  min-height: 100%;
+  min-width: 100%;
+  overflow-x: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: black;
+  /*link transition for all browsers*/
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  color: green;
+}
+
+#link-preview {
+  opacity: 100% !important;
+}
+
+/*developer defined classes*/
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /*transform for centering of div*/
+  transform: translate(-50%, -50%);
+}
+
+.main-content {
+  visibility: visible;
+  display: block;
+  opacity: 1;
+  /*opacity transition for smoothnes*/
+  transition: opacity 0.3s linear;
+  width: 100%;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.main-content.open {
+  opacity: 0.3;
+  /*transition for opacity when main content is set to open for navbar*/
+  transition: opacity 0.3s linear;
+}
+
+.name-center {
+  text-align: center;
+}
+
+button {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 30px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: white !important;
+}
+
+.swiper-button-prev:hover {
+  color: #69f0ae !important;
+  /*added for hover transition smoothing*/
+  transition: all linear 0.3s;
+}
+
+.swiper-button-next:hover {
+  color: #69f0ae !important;
+  /*added for hover transition smoothing*/
+  transition: all linear 0.3s;
+}
+
+.swiper-text h2 {
+  width: 100%;
+  color: white;
+  font-size: 2.5vw;
+  text-align: center;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+}
+
+.about-section {
+  display: inline-block;
+  width: 100%;
+}
+
+.burial-text,
+about-title {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.about-title {
+  margin: 10px;
+}
+
+.burial-content {
+  width: 50%;
+  display: inline-table;
+  padding: 20px;
+}
+
+.burial-photo {
+  width: 50%;
+  display: inline-table;
+  padding: 10px;
+
+  background-image: url("../resources/bg2.avif");
+  background-size: auto;
+  height: 500px;
+  border-radius: 60px;
+  background-position: bottom;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  margin-right: 1vmin;
+}
+
+.map-photo {
+  width: 50%;
+  display: inline-table;
+  padding: 10px;
+
+  background-image: url("../resources/map1.jpg");
+  background-size: auto;
+  height: 500px;
+  border-radius: 60px;
+  background-position: bottom;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  margin-right: 1vmin;
+}
+
+.burial-text {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1vmin;
+  padding: 10px;
+}
+
+.burial-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.burial-title {
+  width: 50%;
+  text-align: center;
+}
+
+.about-container {
+  display: inline-block;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.ecosystem-section {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.photo-side {
+  display: inline-table;
+  width: 50%;
+}
+
+.photo-side img {
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.article-side {
+  display: inline-table;
+  width: 50%;
+  margin-left: 1vmin;
+}
+.first-article,
+.second-article {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.second-article {
+  margin-top: 1vmin;
+}
+.history-card,
+.flora-card,
+.fauna-card {
+  aspect-ratio: 1 / 1.6;
+  border: 0.3vmin solid black;
+  cursor: pointer;
+  position: relative;
+  width: 50vmin;
+}
+
+.flora-card:hover:before {
+  background-position: 100% 100%;
+  background-size: 100% 100%;
+  background-image: url(https://www.wilsonbrosgardens.com/assets/images/betula-alleghaniensis-yellow-birch-tree-fall-1.jpg);
+}
+
+.fauna-card:hover:before {
+  background-position: 100% 100%;
+  background-size: 100% 100%;
+  background-image: url(https://www.animalfunfacts.net/images/stories/photos/mammals/ungulates/deer/white_tailed_deer_l.jpg);
+}
+
+/*before state of cards*/
+.history-card:before,
+.flora-card:before,
+.fauna-card:before {
+  background: linear-gradient(
+    130deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(60, 161, 51, 1) 100%
+  );
+  background-position: 0% 0%;
+  background-size: 300% 300%;
+  content: "";
+  height: 100%;
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  /*interval for background-position and transform with ease property*/
+  transition: background-position 450ms ease, transform 450ms ease;
+  width: 100%;
+  z-index: 1;
+}
+
+/*card content*/
+.history-content,
+.flora-content,
+.fauna-content {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.2) 20%,
+    transparent 8%
+  );
+  background-position: 0% 0%;
+  background-size: 5vmin 5vmin;
+  height: 100%;
+  padding: 5vmin;
+  position: relative;
+  /*interval for background-position with ease propery*/
+  transition: background-position 450ms ease;
+  width: 100%;
+  z-index: 2;
+}
+
+/*container content position shift on hover*/
+.history-card:hover > .history-content {
+  /*shifts background position on hover*/
+  background-position: -10% 0%;
+}
+
+/*container content position shift on hover*/
+.flora-card:hover > .flora-content {
+  /*shifts background position on hover*/
+  background-position: -10% 0%;
+}
+
+/*container content position shift on hover*/
+.fauna-card:hover > .fauna-content {
+  /*shifts background position on hover*/
+  background-position: -10% 0%;
+}
+
+.flora-card:hover .flora-title {
+  /*transition for smoothness of title color change*/
+  transition: 0.2s;
+  color: black !important;
+  font-size: 8vmin;
+}
+
+.fauna-card:hover .fauna-title {
+  /*transition for smoothness of title color change*/
+  transition: 0.2s;
+  color: black !important;
+  font-size: 8vmin;
+}
+
+.news-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  border-radius: 15px;
+}
+/*general styling for card container*/
+.card {
+  background: #f4ffe8;
+  width: 450px;
+  margin: 10px;
+  border-radius: 15px;
+  border: 0.1vmin solid black;
+  height: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+/*styling for card image*/
+.card-image {
+  background-color: aqua;
+  height: 250px;
+  margin-bottom: 15px;
+  background-size: cover;
+  border-radius: 10px;
+  /*scaling the card-image up*/
+  transform: scale(1.03);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+/*stock photo for cards*/
+.card-1 {
+  background-image: url("https://media.istockphoto.com/id/182686524/photo/nap-time.jpg?s=612x612&w=0&k=20&c=1kSSuM1_42hi9jSamitj5zKGaouEVzBEyaYAZZtox3A=");
+}
+
+.card-2 {
+  background-image: url("https://images.pexels.com/photos/1446076/pexels-photo-1446076.jpeg?cs=srgb&dl=pexels-ralph-w-lambrecht-1446076.jpg&fm=jpg");
+}
+
+.card-3 {
+  background-image: url("https://previews.123rf.com/images/kavram/kavram1708/kavram170800291/84397381-flooded-coastal-birch-groves-rocky-mountains-of-canada-in-the-indian-summer-magnificent-turquoise-ab.jpg");
+}
+
+.card h2 {
+  padding: 10px;
+}
+
+.card p {
+  padding: 10px;
+}
+
+/*card link styling*/
+.card a {
+  background-color: green;
+  color: white;
+  padding: 15px 20px;
+  display: block;
+  text-align: center;
+  margin: 20px 50px;
+  border-radius: 15px;
+}
+
+/*card on hover*/
+.card:hover {
+  background-color: #798c64;
+  color: white;
+  cursor: pointer;
+  /*scales the card size on hover*/
+  transform: scale(1.02);
+  /*transition for smoothness on hover*/
+  transition: all 0.3s ease;
+}
+
+/*scaling image on card hover*/
+.card:hover > .card-image {
+  height: 350px;
+}
+
+.about-container a {
+  background-color: green;
+  color: white;
+  padding: 15px 20px;
+  display: block;
+  text-align: center;
+  border-radius: 15px;
+  width: 100%;
+}
+
+.about-container a:hover {
+  background-color: lightgrey;
+  color: green;
+}
+
+.ecosystem-about {
+  margin-top: 15vmin;
+  display: inline-block;
+  width: 75%;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.ecosystemabout-title {
+  width: 100%;
+  text-align: center;
+}
+
+.ecosystem-content {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.ecosystem-text {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.ecosystem-text p {
+  color: black;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.flora-container,
+.fauna-container {
+  width: 50%;
+  height: 100%;
+  display: inline-table;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/*general styling for card*/
+.flip-card {
+  background-color: transparent;
+  width: 400px;
+  height: 400px;
+  display: inline-table;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+  margin-top: 0.4em;
+}
+
+/*"inside" of the card styling, inner transforms out using 3-d transform style*/
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  /*interval for transform on hover*/
+  transition: transform 0.8s;
+  /*indicates the element should be in a 3d space (gives it the 3d effect)*/
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  /*rotates the flipcard inner outward and scales up*/
+  transform: rotateY(180deg) scale(1.03);
+}
+
+/*holds styling for each individual flip card*/
+.flip-card-birchfront,
+.flip-card-back,
+.flip-card-applefront,
+.flip-card-pearfront,
+.flip-card-goosefront,
+.flip-card-salamanderfront {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 50%;
+}
+
+/*flip card images populating*/
+.flip-card-birchfront {
+  background-image: url(https://inaturalist-open-data.s3.amazonaws.com/photos/151650387/original.jpg);
+  background-size: cover;
+  background-position: 40% 50%;
+}
+
+.flip-card-applefront {
+  background-image: url(https://images.unsplash.com/photo-1541600708691-a6e4123f8baa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGFwcGxlJTIwdHJlZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60);
+  background-size: cover;
+  background-position: 40% 50%;
+}
+
+.flip-card-pearfront {
+  background-image: url(https://media.istockphoto.com/id/172198935/photo/fresh-pears-growing-on-a-tree-branch.jpg?s=612x612&w=is&k=20&c=gnKI0pcy87BNEMM8NtwM90VVnxoaHVpjEcRHOL62PM4=);
+  background-size: cover;
+  background-position: 40% 50%;
+}
+
+.flip-card-goosefront {
+  background-image: url(https://images.unsplash.com/photo-1605476249213-d7a5d0722411?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+  background-size: cover;
+  background-position: 40% 50%;
+}
+
+.flip-card-salamanderfront {
+  background-image: url(https://inaturalist-open-data.s3.amazonaws.com/photos/150039411/large.jpg);
+  background-size: cover;
+  background-position: 40% 50%;
+}
+
+/*styling for back of flip card*/
+.flip-card-back {
+  background-color: #c1e1c1;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+.flip-card-back p {
+  color: black;
+}
+
+.flip-card-back h1 {
+  margin-top: 2em;
+  font-size: 2em;
+  line-height: 1em;
+}
+
+.flip-card-back p {
+  margin-top: 2em;
+}
+
+.ecosystemcontent-title h4 {
+  margin-top: 2em;
+  width: 100%;
+  text-align: center;
+}
+
+.history-section,
+.mission-section,
+.rules-section {
+  display: inline-block;
+  justify-items: center;
+  width: 75%;
+}
+.history-text p,
+.mission-text p,
+.rules-text p {
+  color: black;
+}
+
+.aboutpage-container {
+  width: 100%;
+  display: inline-block;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}

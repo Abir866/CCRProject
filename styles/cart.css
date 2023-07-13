@@ -1,0 +1,227 @@
+/*
+Purpose: Provides styling for the cart in estore.
+Rahabar Mahmud - HTML element styling
+*/
+
+/*Styling the banner on the cart page*/
+#heroCart{
+    background-image: url("../resources/products/cart.jpg");
+    background-position: center;
+    background-attachment: fixed; /*Makes the background image fixed*/
+    height:56vh;
+    width:100%;
+    background-position: top 2% right 0;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/*Setting the table for items*/
+#cart table{
+    width: 80%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    white-space: nowrap;
+}
+
+/*Image in the table*/
+#cart table img{
+    width: 70px;
+    height: 70px;
+}
+
+/*Adjusting width of different columns in the table*/
+art table td:nth-child(1){
+    width: 150px;
+    text-align: center;
+
+}
+#cart table td:nth-child(2){
+    width: 200px;
+    text-align: center;
+
+}
+
+#cart table td:nth-child(3),
+#cart table td:nth-child(4)
+{
+    width: 150px;
+    text-align: center;
+
+}
+
+#cart table td:nth-child(5){
+    width: 100px;
+    text-align: center;
+
+}
+
+#cart table td:nth-child(4) input{
+    width: 70px;
+    padding: 10px 5px 10px 15px;
+}
+
+/*Adjusting the table styles*/
+#cart table thead{
+    border: 1px solid #e2e9e1;
+    border-left:none;
+    border-right: none;
+}
+
+#cart table thead td{
+    font-weight: 700;
+    /*changes font to uppercase*/
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 18px 0;
+}
+
+#cart table tbody tr td{
+    padding-top: 15px;
+}
+
+#cart table tbody td{
+    font-size:13px;
+}
+
+#cart table tbody tr td .btn-close {
+
+    text-decoration: none;
+    color: black;
+    background: rgb(230, 242, 243);
+    padding: 8px 8px;
+    border-radius: 30px;
+    border-color: grey;
+    font-weight: normal;
+    /*transition for animation smoothing*/
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+    
+    
+#cart table tbody tr td  .btn-close:hover {
+      background-color:rgb(220, 169, 169);
+      color: white;
+      /*transition for animation smoothing*/
+      transition: 0.3s;
+    }
+
+    /*Adding items to the cart*/
+#cart-add{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/*The return button styling*/
+#return{
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+#return button{
+    background-color: #088178;
+    color:#fff;
+    padding: 30px 30px;
+}
+
+#return button:hover{
+    background-color: rgb(64, 73, 210);
+
+}
+
+#return h3{
+    padding-bottom: 15px;
+}
+
+/*Styling the subtotal box*/
+#sub-total{
+    width: 50%;
+    margin-bottom:30px;
+    border: 1px solid #e3e9e1;
+    padding: 30px;
+}
+
+#sub-total table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
+#sub-total table td{
+    width: 50%;
+    border: 1px solid #e2e9e1;
+    padding: 10px;
+    font-size: 13px;
+    text-align: center;
+}
+
+/*The popup class is used to style the popup div. Intially its size is set to scale 0.1
+ and it hidden under the menu bar.*/
+.popup{
+    width: 400px;
+    background-color: white;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    /*transforms the position of the popup and scales*/
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    /*The popup is hidden initially*/
+    visibility: hidden;
+    /*transition for popup animation and smoothing*/
+    transition: transform 0.4s, top 0.4s;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+
+}
+
+/*When the user checks out, open-popup class is added to the popup. This is styling would
+make the popup appear and visible in front of the user screen. When the user closes the div,
+the open-popup function is removed and the popup shrinks and goes back to its initial hidden form*/
+.open-popup{
+    visibility: visible;
+    top: 45%;
+    /*transforms the position of the popup and scales when opened*/
+    transform: translate(-50%, -50%) scale(1);
+
+}
+
+/*Styling the popup div*/
+.popup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.popup h3{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;    
+}
+
+.popup button{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0px;
+    background: #088178;;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+}
+
+.popup button:hover{
+    background-color: rgb(64, 73, 210);
+}
+  

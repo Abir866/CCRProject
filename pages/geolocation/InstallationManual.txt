@@ -1,0 +1,124 @@
+/----------------------------------------------------------/
+/---------------- Installation Manual ---------------------/
+/----------------------------------------------------------/
+/----------- For Saint Margaret's Bay Trail ---------------/
+/---------------- Geolocation Website ---------------------/
+/----------------------------------------------------------/
+/------------- Authored by: Alexander Mack ----------------/
+/----------------------------------------------------------/
+
+************************************************************
+
+/----------------------------------------------------------/
+/---------------- Sections And Glossary -------------------/
+/----------------------------------------------------------/
+
+Glossary:
+POI(s) -> Points of Interest - The locations that are to be
+shown on the map
+API -> Application Programming Interface - an addition to
+the website that helps to handle specific applications
+Geolocation -> The function of understanding the user's
+location through location services.
+
+Sections:
+1. Location of Source Code
+2. Locaiton of Server
+3. Server Credentials
+4. Server Preparation
+5. Uploading Project To Server
+6. Server Activation
+7. Client URL
+
+************************************************************
+
+/----------------------------------------------------------/
+/--------------- Location of Source Code ------------------/
+/----------------------------------------------------------/
+
+	The source code for the project is within the
+ugdev.cs.smu.ca server, included in the group23D/public_html
+folder. 
+Username: group23D
+Password: 64ChairLadyWear
+
+************************************************************
+
+/----------------------------------------------------------/
+/------------------ Location of Server --------------------/
+/----------------------------------------------------------/
+
+	ugdev.cs.smu.ca
+
+************************************************************
+
+/----------------------------------------------------------/
+/------------------- Server Credentials -------------------/
+/----------------------------------------------------------/
+
+	Server: ugdev.cs.smu.ca
+	Username: group23D
+	Password: 64ChairLadyWear
+
+************************************************************
+
+/----------------------------------------------------------/
+/------------------ Server Preparation --------------------/
+/----------------------------------------------------------/
+
+	There are no extra steps required to prepare the
+server. The entire website is self-contained in the folder.
+
+************************************************************
+
+/----------------------------------------------------------/
+/------------- Uploading Project to Server ----------------/
+/----------------------------------------------------------/
+
+	To upload, copy/paste the contents of the public_html 
+folder from the ugdev.cs.smu.ca server into the desired
+server; or, compress the files to a .zip, and unzip the files
+at the desired location.
+
+************************************************************
+
+/----------------------------------------------------------/
+/------------------- Server Activation --------------------/
+/----------------------------------------------------------/
+	
+	There is no command required to run the server,
+currently the server will run in place once it has been fully
+transferred to an appropriate server. The file that must be
+run in order to view the server is the FV.html file, which is
+currently inside the ./public_html/ folder.
+
+In order to access the server currently, you will need to
+input the commands (line breaks are ENTER):
+ssh group23D@ugdev.cs.smu.ca
+yes
+64ChairLadyWear	
+************************************************************
+
+/----------------------------------------------------------/
+/---------------------- Client URL ------------------------/
+/----------------------------------------------------------/
+
+	Until the site has been moved from the 
+ugdev.cs.smu.ca server, the website can be viewed from this
+URL:
+https://ugdev.cs.smu.ca/~group23D/FV.html
+
+************************************************************
+
+/----------------------------------------------------------/
+/----------------------- Credits --------------------------/
+/----------------------------------------------------------/
+
+	This website was created by group 23 D of the 2022
+Fall semester course CSCI 3428 - Software Engineering.
+Developers:
+Alexander Mack
+Jalen Pinder
+Alexandra Embree
+Mohamed Aly
+François Couture

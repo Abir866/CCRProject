@@ -1,0 +1,135 @@
+/*
+Purpose: Provides styling for the header section of webpages
+Author(s) / Work Done: 
+Devon Leigh - HTML element styling
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Spartan");
+
+/*html elements section*/
+html {
+  font-family: "Spartan", sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  font-family: "Spartan";
+  color: lightgreen;
+  height: 5%;
+  z-index: 10;
+}
+
+/*developer defined classes*/
+.header-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  height: 5rem;
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.org-name {
+  color: black;
+  font-size: 18px;
+  display: flex;
+}
+
+.org-name p {
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+
+.org-logo {
+  background-size: cover;
+  background-image: url(https://i.ibb.co/gzCVGzc/blacklogo.png);
+  height: 5rem;
+  width: 5rem;
+  /*transition for animation smoothing*/
+  transition: all linear 0.3s;
+}
+
+.org-logo:hover {
+  background-image: url(https://i.ibb.co/KGcP2wk/greenlogo.png);
+  background-size: cover;
+  height: 5rem;
+  width: 5rem;
+  /*transition for animation smoothing*/
+  transition: all linear 0.3s;
+}
+
+.org-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-btn {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem;
+    margin-right: -1rem;
+    background: none;
+    border: 0;
+  }
+
+  .menu-btn_burger {
+    width: 40px;
+    height: 5px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px black;
+    /*transition for animation smoothing*/
+    transition: all 0.3s linear;
+  }
+  .menu-btn_burger::before,
+  .menu-btn_burger::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 5px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px black;
+    /*transition for animation smoothing*/
+    transition: all 0.3s linear;
+  }
+  .menu-btn_burger:hover,
+  .menu-btn_burger:hover::before,
+  .menu-btn_burger:hover::after {
+    background: green;
+  }
+  /*y position in before state*/
+  .menu-btn_burger::before {
+    transform: translateY(-12px);
+  }
+  /*y position in after state*/
+  .menu-btn_burger::after {
+    transform: translateY(12px);
+  }
+  /*animation that changes the degrees of the lines and position when menu bar is opened*/
+  .menu-btn.open .menu-btn_burger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+  }
+
+  /*animation that changes the degrees of the lines and position when menu bar is opened*/
+  .menu-btn.open .menu-btn_burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+  /*animation that changes the degrees of the lines and position when menu bar is opened*/
+  .menu-btn.open .menu-btn_burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+  }
+}

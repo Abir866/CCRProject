@@ -1,0 +1,244 @@
+<!--
+  Purpose: Ecosystem page of the website, contains information regarding the flora and fauna found at the conservation
+  Authors: 
+  Devon Leigh - Styling, structure, content
+  Rahabar Mahmud - Content, Footer
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+
+    <!--Linking the css files for styling-->
+    <link rel="stylesheet" href="../../styles/body.css" />
+    <link rel="stylesheet" href="../../styles/nav.css" />
+    <link rel="stylesheet" href="../../styles/header.css" />
+    <link rel="stylesheet" href="../../styles/footer.css" />
+    <link rel="stylesheet" href="../../styles/index.css" />
+    <link rel="stylesheet" href="../../styles/estore.css" />
+
+    <!--Linking a custom font-->
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!--Linking the javascript files for functionality-->
+    <script defer src="../../scripts/estore.js"></script>
+    <script>
+      function seniorFunction(){
+
+var x = document.getElementById("senior").innerHTML;
+
+
+if (x== "Accessibility Mode"){
+console.log(document.getElementsByClassName('main-container').length);
+document.getElementById("senior").innerHTML = "Normal View";
+document.getElementsByClassName('main-container')[0].style.backgroundColor='dimgrey';
+let len = document.getElementsByClassName('main-container').length;
+for(i=0; i<len; i++){
+document.getElementsByClassName('main-container')[i].style.color='rgb(225,225,80)';
+document.getElementsByClassName('main-container')[i].style.fontSize = '30px';
+}
+}
+else {
+window.location.reload();
+}
+}   
+    </script>
+    <script defer src="../../scripts/main.js"></script>
+
+    <title>Saint Margaret's Bay Store</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="org-name">
+          <!--Links back to homepage if clicked-->
+          <a class="org-logo" href="index.html"></a>
+          <!--Links back to homepage if clicked-->
+          <p>
+            <a href="index.html">French Village Forest <b>Conservation</b></a>
+          </p>
+        </div>
+        <div class="menu-btn">
+          <div class="menu-btn_burger"></div>
+          <div id="nav-bar" class="nav-bar">
+            <nav>
+              <ul>
+                <!--Links to alternative pages in the navbar-->
+                <li><button id= "senior" ondblclick= "seniorFunction()" style= "padding: 10px; color: white; font-weight: bolder;
+                  font-size: small; border: none; background-color:MediumSeaGreen;">Accessibility Mode</button></li>
+                <li><a href="../../pages/about/about.html">About</a></li>
+                <li><a href="../../pages/ecosystem/ecosystem.html">Ecosystem</a></li>
+                <li><a href="../../pages/map/map.html">Map</a></li>
+                <li><a href="../../pages/burial/burial.html">Burial</a></li>
+                <li><a href="../../pages/quiz/game.php">Quiz</a></li>
+                <li><a href="../../pages/e-commerce/estore.html">Marketplace</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--Main content div for all page content for responsive design-->
+    <div id="main-content" class="main-content main-container">
+      <div class="ecosystem-about">
+        <div class="ecosystemabout-title">
+          <h1 class="main-container">ECOSYSTEM</h1>
+        </div>
+        <div class="ecosystem-text">
+          <p class="main-container">
+            <b>French Village Forest Conservation</b> is home to a diverse
+            ecosystem. With historic and interesting flora and fauna, there is
+            something to see for everyone. Whether you are interested in the
+            historic coastal yellow birch that Nova Scotia is famous for, or our
+            small reptile friends that take refuge under rocks; the diversity
+            never stops astonishing.
+          </p>
+        </div>
+      </div>
+      <div class="ecosystemcontent-title">
+        <h4 class="main-container">Hover over the circles for more information!</h4>
+      </div>
+      <div class="ecosystem-content">
+        <!--Container for the flora flipcards-->
+        <div class="flora-container">
+          <div class="flora-title">
+            <h2 class="main-container">Flora</h2>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-birchfront"></div>
+              <div class="flip-card-back">
+                <h1 class="main-container">
+                  Coastal Yellow<br />
+                  Birch
+                </h1>
+                <p class="main-container">
+                  Coastal Yellow birch is Nova Scotia's longest-lived hardwood
+                  species dating over 300 years.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-applefront"></div>
+              <div class="flip-card-back">
+                <h1 class="main-container">Apple Trees<br /></h1>
+                <p class="main-container">
+                  French Village is home to some of the largest apple trees in
+                  eastern Canada
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-pearfront"></div>
+              <div class="flip-card-back">
+                <h1 class="main-container">Pear Trees<br /></h1>
+                <p class="main-container">
+                  French Village is home to some of the largest apple trees in
+                  eastern Canada
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Container for the fauna flipcards-->
+        <div class="fauna-container">
+          <div class="fauna-title">
+            <h2 class="main-container">Fauna</h2>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-goosefront"></div>
+              <div class="flip-card-back">
+                <h1 class="main-container">Canada Goose</h1>
+                <p class="main-container">
+                  At French Village Conservation, you will find a Canadian
+                  staple, the Canada Goose.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-salamanderfront"></div>
+              <div class="flip-card-back">
+                <h1 class="main-container">
+                  Eastern<br />Red-backed<br />
+                  Salamander
+                </h1>
+                <p class="main-container">
+                  One of our many scaly friends on the conservation, these guys
+                  are a small salamander that inhabits wooded slopes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--The footer-->
+      <footer class="section-p1">
+        <div class="col">
+          <h4>Contact Us</h4>
+          <p>
+            <strong>Address:</strong> 71 St Pauls Ln, French Village, NS B3Z 4E3
+          </p>
+          <p><strong>Phone:</strong> 111 222 333/ (+1) 444 555 666</p>
+          <p><strong>Hours:</strong> 10:00 - 16:00; Mon - Sat</p>
+        </div>
+
+        <div class="col">
+          <h4>Useful Links</h4>
+          <a href="#">Quiz</a>
+          <a href="#">Sign-in</a>
+          <a href="#">MarketPlace</a>
+          <a href="#">Map</a>
+        </div>
+
+        <div class="col">
+          <div class="follow">
+            <h4>Follow us</h4>
+            <div class="icon">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-pinterest-p"></i>
+              <i class="fab fa-linkedin"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>Ⓒ SMU Software Engineering Group F</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

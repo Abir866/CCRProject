@@ -1,0 +1,64 @@
+<!-- 
+    Define the markup of the index page within the admin fodler
+
+    Author: Agowun Muhammad Altaf (A00448118), shared the markup from newSpecies file 
+    Author: Anmol Bhatla (A00441358), wrote the whole file and adapted the markup shared from newSpecies file to newItem file
+ -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Add new Item</title>
+        <!-- jQuery library for DOM manipulation -->
+        <script
+            src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+            crossorigin="anonymous"
+        ></script>
+        <script src="./script/newItem.js" defer></script>
+        <link rel="stylesheet" href="./style/newItem.css" />
+    </head>
+    <body>
+        <div id="form">
+            <!-- populated with the images of the item to be uploaded -->
+            <div class="preview"></div>
+
+            <label for="imageInput" id="imageInputLabel"
+                >Add Images
+
+                <!-- hidden file input to upload images -->
+                <input
+                    hidden
+                    type="file"
+                    name="images"
+                    id="imageInput"
+                    accept="image/*"
+                    multiple
+                />
+            </label>
+
+            <label for="name">Name: <input id="name" type="text" /></label>
+
+            <label for="price"
+                >Price: <input id="price" type="number" min="0"
+            /></label>
+
+            <label for="description"
+                >Description:
+                <textarea
+                    name="description"
+                    id="description"
+                    cols="80"
+                    rows="10"
+                ></textarea>
+            </label>
+
+            <button id="upload">Upload</button>
+
+            <!-- populated with the progression of uploading the images -->
+            <div id="progress"></div>
+        </div>
+    </body>
+</html>

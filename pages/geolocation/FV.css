@@ -1,0 +1,213 @@
+body {
+    background-image: url("green.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    /* color: rgb(222, 255, 255); */
+    font-family: 'Domine', serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header */
+@keyframes lowerLogo {
+    from { top: -80px; }   
+    to { top: 15px; }
+ }
+ 
+ .logo {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    padding: 15px;
+    text-shadow: 2px 2px black;
+    animation-name: lowerLogo;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;      
+    position: relative;
+    transition: all 200ms ease-in-out;
+}
+
+.about {
+    text-align: end;
+    background-color: #636940;
+    font-size: 20px;
+    padding: 10px;
+}
+
+@keyframes largerFont {
+    from { font-size: 20px; }   
+    to { font-size: 30px; }
+ }
+
+.about a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+.about a:hover {
+    animation-name: largerFont;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    transition: all 200ms ease-in-out;
+    background-color: white;
+    color: #474A2C;
+}
+
+
+/* Main */
+main>div {
+    display: flex;
+    border-top: 1px solid #474A2C;
+    border-bottom: 1px solid #474A2C;
+    /* color: rgb(34, 17, 1); */
+    color: #383838;
+}
+
+main > #map {
+    flex-direction: column;
+}
+
+div h2 {
+    text-indent: 1.5cm;
+    font-size: 30pt;
+}
+
+/* Tabs Section */
+.tabs {
+    background-color: #9BDEAC;
+    padding: 30px;
+    align-content: center;
+    color: #383838;
+    font-size: 25pt;
+    text-align: center;
+    display: block;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.tabs a {
+    text-decoration: none;
+    color: #636940;
+    border: #474A2C solid, 1px;
+    margin: 10px 10px 10px 10px;
+}
+
+@keyframes tabFont {
+    from { font-size: 30px; }   
+    to { font-size: 45px; }
+ }
+
+.tabs a:hover {
+    /* text-decoration: none; */
+    color: white;
+    animation-name: tabFont;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    transition: all 200ms ease-in-out;
+}
+
+.tabs a:active {
+    transition-duration: 1s;
+}
+
+#history {
+    background-color: rgba(155, 222, 172, 0.9);
+    flex-direction: column;
+}
+
+#location {
+    background-color: rgba(155, 222, 172, 0.9);
+    flex-direction: column;
+    padding: 1% 1% 1% 1%;
+}
+
+#history > div {
+    padding:1% 1% 1% 1%;
+    border-top: 1px solid #474A2C;
+    border-bottom: 1px solid #474A2C;
+}
+
+#map {
+    background-color: rgba(155, 222, 172, 0.6);
+    /*justify-content: space-evenly; */
+    height: 75vh;
+    width: 97.5vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+#destButton {
+    width: 300px;
+    height: 100px;
+    font-size: 150%;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition-duration: 0.1s;
+}
+
+#destButton:hover {
+    background-color: #DDDDDD;
+    color: #000000;
+}
+
+.hide{
+    background-color: rgba(155, 222, 172, 0.6);
+    color: white;
+    justify-content: space-evenly;  
+}
+
+#interest {
+    /* background-color: #B4E7CE; */
+    background-color: rgba(155, 222, 172, 0.9);
+    flex-direction: column;
+}
+
+#wildlife {
+    /* background: rgba(180, 231, 206, 0.5); */
+    background-color: rgba(155, 222, 172, 0.9);
+    flex-direction: column;
+    padding:1% 1% 1% 1%;
+}
+
+#photos {
+    background: rgba(99, 105, 64, .9);
+    display: block;
+    color: #0D0D0D;
+    padding:1% 1% 1% 1%;
+    justify-content: space-evenly;
+}
+
+#photos div {
+    display: flexbox;
+    align-content: center;
+    justify-content: space-evenly;
+    /* flex-wrap: wrap; */
+}
+
+#photos div img {
+    max-width: 400px;
+    justify-content: space-between;
+}
+
+/* Footer and contact */
+#contact {
+    text-align: right;
+    padding: 15px;
+    background-color: #474A2C;
+    font-size: larger;
+    color: white;
+    text-decoration: none;
+}
+
+#contact a {
+    text-decoration: none;
+    color: white;
+}
