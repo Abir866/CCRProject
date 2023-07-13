@@ -40,68 +40,68 @@ body {
 }
 
 // styling for the navbar across all pages
-nav {
-    z-index: 9999;
-    position: fixed;
-    left: 0;
-    top: 0;
-    margin: 1em 1.6%;
-    border-radius: 0.5rem;
-    background-color: var(--bg-color);
-    padding: 1em 2em;
-    width: 96.8%;
-    transition: all 0.5s cubic-bezier(0.37, 0, 0.54, 0.99);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
-        0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11),
-        0 8px 16px rgba(0, 0, 0, 0.11);
+// nav {
+//     z-index: 9999;
+//     position: fixed;
+//     left: 0;
+//     top: 0;
+//     margin: 1em 1.6%;
+//     border-radius: 0.5rem;
+//     background-color: var(--bg-color);
+//     padding: 1em 2em;
+//     width: 96.8%;
+//     transition: all 0.5s cubic-bezier(0.37, 0, 0.54, 0.99);
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+//         0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11),
+//         0 8px 16px rgba(0, 0, 0, 0.11);
 
-    a {
-        color: black;
-        text-decoration: none;
-        display: inline-block;
-        position: relative;
-    }
+//     a {
+//         color: black;
+//         text-decoration: none;
+//         display: inline-block;
+//         position: relative;
+//     }
 
-    #logo {
-        font-weight: bold;
-        font-size: large;
-        line-height: 100%;
-    }
+//     #logo {
+//         font-weight: bold;
+//         font-size: large;
+//         line-height: 100%;
+//     }
 
-    #menu {
-        display: none;
-    }
+//     #menu {
+//         display: none;
+//     }
 
-    ul {
-        list-style: none;
-        display: grid;
-        grid-auto-flow: column;
-        gap: 3em;
+//     ul {
+//         list-style: none;
+//         display: grid;
+//         grid-auto-flow: column;
+//         gap: 3em;
 
-        a {
-            width: 100%;
-            &:after {
-                content: "";
-                position: absolute;
-                width: 100%;
-                transform: translateX(-50%) scaleX(0);
-                height: 1px;
-                bottom: 0;
-                left: 50%;
-                background-color: black;
-                transform-origin: center;
-                transition: transform 0.3s ease-out;
-            }
+//         a {
+//             width: 100%;
+//             &:after {
+//                 content: "";
+//                 position: absolute;
+//                 width: 100%;
+//                 transform: translateX(-50%) scaleX(0);
+//                 height: 1px;
+//                 bottom: 0;
+//                 left: 50%;
+//                 background-color: black;
+//                 transform-origin: center;
+//                 transition: transform 0.3s ease-out;
+//             }
 
-            &:hover:after {
-                transform: translateX(-50%) scaleX(1);
-            }
-        }
-    }
-}
+//             &:hover:after {
+//                 transform: translateX(-50%) scaleX(1);
+//             }
+//         }
+//     }
+// }
 
 // styling for the footer across all pages
 #footer {
