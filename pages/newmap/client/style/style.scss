@@ -182,14 +182,14 @@ body {
 
 // tablet size responsiveness
 @media only screen and (max-width: 768px) {
-    nav {
-        height: fit-content;
-        padding: 1em;
+    // nav {
+    //     height: fit-content;
+    //     padding: 1em;
 
-        ul {
-            gap: 1em;
-        }
-    }
+    //     ul {
+    //         gap: 1em;
+    //     }
+    // }
 
     #footer {
         #footerWrapper {
