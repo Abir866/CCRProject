@@ -1,0 +1,75 @@
+/*
+    Purpose: This file provides styling to submit_pic.php.
+
+    Author: Gobind Preet Singh / Everything
+*/
+
+/* HTML Elements */
+input[type=text], input[type=email], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #6C8A72;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #869b8a;
+    transform: scale(1.05);
+}
+
+input[type=file] {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;     
+}
+
+label[for=image] {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  width: 10%;
+  text-align: center;
+  border-radius: 25px;
+  
+}
+
+label[for=image]:hover {
+    background-color: #ccc;
+}
+
+/* developer defined classes */
+.response {
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: -5px;
+    border-radius: 2px;
+}
+
+.error {
+    background: #fdcdcd;
+    border: #ecc0c1 1px solid;
+}
+
+.success {
+    background: #c5f3c3;
+    border: #bbe6ba 1px solid;
+}
+
+/* developer defined ids */
+#img{
+    margin-bottom: 15px;
+}

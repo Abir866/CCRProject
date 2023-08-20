@@ -1,0 +1,180 @@
+/*
+ * Purpose: CSS styling for generic pages and overall site style.
+ * Authors / Work Done:
+ * 	Serena Carter / General, banner, navigation, content
+ * 	Justin Lemire / "Other" section and below
+ */
+
+
+/* General content */
+* {
+  font-family: Arial;
+}
+body {
+  background-image: url("https://img02.deviantart.net/7b52/i/2013/127/0/9/oldgrowth_canadian_rainforest_stock_by_leeorr_stock-d64ek0e.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* id specific styling */
+/* Banner */
+#banner {
+  box-sizing: border-box;
+  margin: auto;
+  margin-top: -15px;
+  max-width: 100%;
+  background-color: #6C8A72;
+  padding: 15px 0px;
+}
+#banner h1 {
+  padding: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+  background-color: #5C7861;
+  color: white;
+}
+
+
+/* Navigation */
+#nav {
+  box-sizing: border-box;
+  margin: auto;
+  max-width: 100%;
+  background-color: #B4D2B9;
+}
+
+#nav ul {
+  display:flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#nav li {
+  margin-right: 10px;
+  padding: 0;
+}
+
+#nav a {
+  display: inline-block;
+  padding: 10px;
+  color: #5C7861;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#nav a:hover {
+  background-color: white;
+  cursor:pointer;
+  outline: 1px solid black;
+}
+
+/* Content */
+#content {
+  box-sizing: border-box;
+  margin: auto;
+  max-width: 100%;
+  background-color: white;
+  padding: 15px 15px 20px 15px;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+}
+#content h1 {
+  background-color: #6C8A72;
+  border-radius: 10px;
+  padding: 10px;
+  padding-left: 20px;
+  text-align: left;
+  color: white;
+}
+#content p,
+#content ul {
+  font-size: 17px;
+  margin: auto;
+  padding: 0 0 10px 0;
+  color: black;
+}
+#content p {
+  max-width: 93%;
+}
+#content h2 {
+  padding: 0 10px 0 25px;
+}
+#content ul {
+  max-width: 88%;
+}
+
+/* Other */
+#map {
+  height: 40vh;
+  background-color: grey;
+  clear: both;
+}
+
+#content > h4 {
+  margin-left: 5px;
+  margin-bottom: 5px;
+  padding-top: 10px;
+  clear: both;
+}
+
+#info p{
+  padding-top:5px;
+  float: left;
+}
+
+#info h4 {
+  padding-top: 10px;
+  margin-bottom: 0px;
+}
+
+#infoRight p{
+  padding-top: 5px;
+  float: left;
+}
+
+#infoRight h4{
+  margin-bottom: 0px;
+}
+
+#picture img{
+  float: left;
+  height: 250px;
+  width: 100%;
+  margin-right: 10px;
+  object-fit: scale-down;
+}
+
+#pictureRight img {
+  float: left;
+  height: 250px;
+  width: 100%;
+  margin-right: 0px;
+  object-fit: scale-down;
+}
+
+#content section {
+  border: 2px solid black;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+  /* more id specific styling */
+  #banner {max-width: 67%;}
+  #nav {max-width: 67%;}
+  #content {max-width: 67%;}
+  #body {margin-right:8px; margin-left:8px;}
+  #info h4{padding-top: 10%; margin-bottom: 0px; float: none;}
+  #info p{float: none;}
+  #infoRight h4{padding-top: 10%; margin-left: 3.5%; margin-bottom: 0px; float: none;}
+  #infoRight p{float: none;}
+  #picture img{height: 400px; width:auto; max-width: 50%;}
+  #pictureRight img{height:400px; max-width: 50%; float: right;}
+  #map {width:40%;}
+}
+
+
