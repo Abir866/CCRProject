@@ -11,13 +11,13 @@
 $quiz = $gallery = 0;
 $submit_pic = 1;
 // includes the php file that does majority of the form processing and database functionality
-require_once 'includes/form_processing.php';
+require_once './includes/form_processing.php';
 // includes the HTML head tag common to all pages
-include 'common/document_head.php'; 
+include './common/document_head.php'; 
 // includes the common to all pages, banner section
-include 'common/banner.php'; 
+include './common/banner.php'; 
 // includes the common to all pages, navbar
-include 'common/nav.html'; 
+include './common/nav.html'; 
 ?> 
 
 <body>
