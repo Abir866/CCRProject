@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="https://ugdev.cs.smu.ca/~group23I/WoodlandWebsite/">
+    <base href="https://ugdev.cs.smu.ca/~group23F/Web/pages/gallery/">
     
     <link rel="stylesheet" href="./css/main.css">
     <?php if($submit_pic) { ?>
