@@ -10,7 +10,7 @@
   Authors / WorkDone : Gobind Preet Singh / Everything
 */
 
-include 'common/connection.php';
+include './../../common/connection.php';
 
 /*
   Purpose: The purpose of this function is to sanitize the user provided data
