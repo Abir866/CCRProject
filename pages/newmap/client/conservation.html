@@ -56,6 +56,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="./../../../styles/nav.css" />
+    <link rel="stylesheet" href="./../../../styles/header.css" />
 
 
         <!-- Programmer defined default scripts -->
@@ -90,13 +91,35 @@
         <main id="main_content">
             <!-- top section of the conservation page -->
             <header>
-                <div id="headerContent">
-                    <h1>Conservation</h1>
-                    <p>
-                        Explore the beautiful fauna and flora present at the
-                        French Village Conservation.
-                    </p>
-                </div>
+                <div class="header-container">
+                    <div class="org-name">
+                      <!--Links back to homepage if clicked-->
+                      <a class="org-logo" href="../../index.html"></a>
+                      <!--Links back to homepage if clicked-->
+                      <p>
+                        <a href="../../../index.html">French Village Forest <b>Conservation</b></a>
+                      </p>
+                    </div>
+                    <div class="menu-btn">
+                      <div class="menu-btn_burger"></div>
+                      <div id="nav-bar" class="nav-bar">
+                        <nav>
+                          <ul>
+                            <!--Links to alternative pages in the navbar-->
+                            <!--Double click on the 'Accessibility Mode' button calls seniorFunction()-->
+                           
+                            <li><a href="../../pages/about/about.html">About</a></li>
+                            <li><a href="../../pages/ecosystem/ecosystem.html">Ecosystem</a></li>
+                            <li><a href="../../pages/map/map.html">Map</a></li>
+                            <li><a href="../../pages/burial/burial.html">Burial</a></li>
+                            <li><a href="../../pages/quiz/game.php">Quiz</a></li>
+                            <li><a href="../../pages/e-commerce/estore.html">Marketplace</a></li>
+            
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
             </header>
 
             <!-- bar below header section to select the category -->
