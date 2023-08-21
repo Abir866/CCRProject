@@ -3,29 +3,6 @@
 
  Author: Agowun Muhammad Altaf (A00448118), wrote the whole file
 */
-header {
-  width: 100%;
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-header div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-header div h1 {
-  text-align: center;
-  font-size: 6vw;
-  text-transform: uppercase;
-  padding-bottom: 0.5em;
-}
-header div p {
-  padding: 1em;
-}
 
 #categorySelection {
   width: 100%;
