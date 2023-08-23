@@ -1,4 +1,10 @@
-Monday, August 21st
+Wednesday, August 23rd
+ Remember the yellow Birch?
+option2
+ans2
+"background-image:url('./../../resources/image/birch.jpeg');height:190px;"
+option22
+option23
  Which of these would you gossip about?
 option1
 ans1
@@ -11,21 +17,15 @@ ans3
 "background-image:url('./../../resources/image/apple.jpeg');height:190px;"
 option32
 option33
- Remember the yellow Birch?
-option2
-ans2
-"background-image:url('./../../resources/image/birch.jpeg');height:190px;"
-option22
-option23
- Your nut-cracker friend?
-option3
-ans5
-"background-image:url('./../../resources/image/squi.jpeg');height:190px;"
-option32
-option33
  What else can fly better than other squirrel in name?
 option3
 ans4
 "background-image:url('./../../resources/image/bird3.jpeg');height:190px;"
+option32
+option33
+ Your nut-cracker friend?
+option3
+ans5
+"background-image:url('./../../resources/image/squi.jpeg');height:190px;"
 option32
 option33
