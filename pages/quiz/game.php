@@ -120,7 +120,7 @@
 
                     </p>
                 </article>
-                <!-- script containing The more information modal's content(some text and link) that uses the third part js library and css for  functioning as a modal for each screen in the of the game 
+                <!-- script containing The more information modal's content(some text and link) that uses the third party js library and css for  functioning as a modal for each screen in the game 
                      The script ends by including the quiz. php script that provides functioning of the elements here in game.php that calls it's(script's) functions.-->
                 <?php 
                 # the class- modal label's the div tag html for modification by js and css of the libraries imported. Once the link to the modal is clocked(info button).The rel:open pseudo selector  open's the modal due to the js library 
