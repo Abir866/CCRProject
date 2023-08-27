@@ -37,6 +37,29 @@
         <!-- Programmer defined css for this page -->
         <link rel="stylesheet" href="./style/index.css" />
 
+        <!--New Links-->
+        <link
+        rel="stylesheet"
+        href="path/to/font-awesome/css/font-awesome.min.css"
+      />
+      <link
+        rel="stylesheet"
+        href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
+      <link rel="stylesheet" href="./../../../styles/nav.css" />
+      <link rel="stylesheet" href="./../../../styles/header.css" />
+      <link rel="stylesheet" href="../../../styles/index.css" />
+      <link rel="stylesheet" href="../../styles/body.css" />
+
         <!-- Programmer defined default scripts -->
         <script src="./script/script.js" defer></script>
         <!-- Programmer defined script for this page -->
@@ -68,15 +91,45 @@
 
         <main id="main_content">
             <!-- header section -->
+
             <header>
+                <div class="header-container">
+                    <div class="org-name">
+                      <!--Links back to homepage if clicked-->
+                      <a class="org-logo" href="../../../index.html"></a>
+                      <!--Links back to homepage if clicked-->
+                      <p>
+                        <a href="../../../index.html">French Village Forest <b>Conservation</b></a>
+                      </p>
+                    </div>
+                    <div class="menu-btn">
+                      <div class="menu-btn_burger"></div>
+                      <div id="nav-bar" class="nav-bar">
+                        <nav>
+                          <ul>
+                            <!--Links to alternative pages in the navbar-->
+                            <!--Double click on the 'Accessibility Mode' button calls seniorFunction()-->
+                           
+                            <li><a href="../../about/about.html">About</a></li>
+                            <li><a href="../../ecosystem/ecosystem.html">Ecosystem</a></li>
+                            <li><a href="../../map/map.html">Map</a></li>
+                            <li><a href="../../burial/burial.html">Burial</a></li>
+                            <li><a href="../../quiz/game.php">Quiz</a></li>
+                            <li><a href="../../e-commerce/estore.html">Marketplace</a></li>
+            
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
                 <!-- main image for the header -->
-                <div id="img_container">
+                <div id="img_container" style="display: none;">
                     <!-- <img src="./assets/senior trail.jpg" />
                     <img src="./assets/Natural burial.jpg" />
                     <img src="./assets/rewilding.jpg" /> -->
                 </div>
                 <!-- description container  -->
-                <div id="description">
+                <div id="description" style="display: none;">
                     <!-- Senior Trail -->
                     <!-- <span class="text_content">
                         <h2>Senior Trail</h2>
