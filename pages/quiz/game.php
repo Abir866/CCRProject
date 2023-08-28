@@ -47,8 +47,9 @@
 
     <!--Linking the javascript file for functionality of the quiz-->
     <script src="./../../scripts/carousel.js"></script>
-
+    <!--Embedded style to remove the cross from the modal -->
     <style>
+        
         .modal a.close-modal {
     display: none;
 }
